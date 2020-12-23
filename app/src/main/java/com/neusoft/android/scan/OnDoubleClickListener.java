@@ -7,8 +7,6 @@ import android.view.View;
  * 双击监听事件
  */
 
-
-
 public class OnDoubleClickListener implements View.OnTouchListener {
 
     private int count = 0;//点击次数

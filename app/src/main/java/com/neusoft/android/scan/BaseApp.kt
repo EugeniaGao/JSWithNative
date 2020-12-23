@@ -5,7 +5,6 @@ import android.util.Log
 import android.widget.Toast
 import com.tencent.smtt.sdk.QbSdk
 
-
 class BaseApp : Application() {
     init {
         instance = this
