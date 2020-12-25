@@ -5,18 +5,15 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Vibrator
 import androidx.appcompat.app.AppCompatActivity
-import android.util.Log
 import android.view.Gravity
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import com.neusoft.android.scan.Constants.SCAN_ACTIVITY_RESULT_CODE
-
 import com.neusoft.qrcode.core.QRCodeView
 import kotlinx.android.synthetic.main.activity_scan.*
 import kotlinx.android.synthetic.main.toolbar.*
-
 
 class ScanActivity : AppCompatActivity(), QRCodeView.Delegate {
 
@@ -57,7 +54,6 @@ class ScanActivity : AppCompatActivity(), QRCodeView.Delegate {
     }
 
     override fun onScanQRCodeSuccess(result: String) {
-        Log.i(TAG, "result:$result")
         title = "扫描结果为：$result"
         vibrate()
         intent = Intent().apply { putExtra("scanResult", result) }

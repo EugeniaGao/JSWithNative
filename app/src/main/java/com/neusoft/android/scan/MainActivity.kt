@@ -26,7 +26,6 @@ import pub.devrel.easypermissions.AfterPermissionGranted
 import pub.devrel.easypermissions.AppSettingsDialog
 import pub.devrel.easypermissions.EasyPermissions
 
-
 class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
     var webview: com.tencent.smtt.sdk.WebView? = null
     private var mExitTime: Long = 0
@@ -51,12 +50,12 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
                 }))
         webview?.apply {
             // 加载html
-//            loadUrl("file:///android_asset/web.html")
-            btn.setOnClickListener {
-                loadUrl("http://"+input_url.text.toString())
-            }
+            loadUrl("file:///android_asset/web.html")
+//            btn.setOnClickListener {
+//                loadUrl("http://"+input_url.text.toString())
+//            }
 //            loadUrl("http://192.168.137.172:3008/neusoft_web/ImgTest")
-            loadUrl("http://36.153.48.162:8091/neusoftEEP_web/login")
+//            loadUrl("http://36.153.48.162:8091/neusoftEEP_web/login")
             settings.javaScriptEnabled = true
             addJavascriptInterface(this@MainActivity, "android")
             //设置ChromeClient
@@ -90,12 +89,12 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
 
     //由于安全原因 需要加 @JavascriptInterface
     @JavascriptInterface
-    fun scanQrcode() {
+    fun scanQrcode() {     //1.由js直接调用了该方法
         initPermission()
     }
 
     /**
-     * 申请本地储存权限
+     * 2.申请本地储存权限,获取权限后跳转~回调
      */
     private fun initPermission() {
         when {
@@ -110,7 +109,7 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
 
     @JavascriptInterface
     fun scanQrcode(text: String) {
-        //接收前端JS的传值，扫描成功之后将值再传给前端
+        //1.传参接收前端JS的传值，扫描成功之后将值再传给前端
         initPermission()
         primary_key = text
     }
@@ -219,6 +218,9 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
         Toast.makeText(this, warring, Toast.LENGTH_SHORT).show()
     }
 
+    /**
+     * 3.扫描完成后的方法回调
+     */
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == SCAN_ACTIVITY_RESULT_CODE) {

@@ -1,0 +1,25 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\WorkspaceKotlin\JSWithNative-master\zxing\src\main\AndroidManifest.xml:1:1-48
+INJECTED from E:\WorkspaceKotlin\JSWithNative-master\zxing\src\main\AndroidManifest.xml:1:1-48
+INJECTED from E:\WorkspaceKotlin\JSWithNative-master\zxing\src\main\AndroidManifest.xml:1:1-48
+	package
+		ADDED from E:\WorkspaceKotlin\JSWithNative-master\zxing\src\main\AndroidManifest.xml:1:11-45
+		INJECTED from E:\WorkspaceKotlin\JSWithNative-master\zxing\src\main\AndroidManifest.xml
+		INJECTED from E:\WorkspaceKotlin\JSWithNative-master\zxing\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from E:\WorkspaceKotlin\JSWithNative-master\zxing\src\main\AndroidManifest.xml:1:1-48
+uses-sdk
+INJECTED from E:\WorkspaceKotlin\JSWithNative-master\zxing\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from E:\WorkspaceKotlin\JSWithNative-master\zxing\src\main\AndroidManifest.xml
+INJECTED from E:\WorkspaceKotlin\JSWithNative-master\zxing\src\main\AndroidManifest.xml
+INJECTED from E:\WorkspaceKotlin\JSWithNative-master\zxing\src\main\AndroidManifest.xml
+INJECTED from E:\WorkspaceKotlin\JSWithNative-master\zxing\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from E:\WorkspaceKotlin\JSWithNative-master\zxing\src\main\AndroidManifest.xml
+		ADDED from E:\WorkspaceKotlin\JSWithNative-master\zxing\src\main\AndroidManifest.xml
+		INJECTED from E:\WorkspaceKotlin\JSWithNative-master\zxing\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\WorkspaceKotlin\JSWithNative-master\zxing\src\main\AndroidManifest.xml
+		ADDED from E:\WorkspaceKotlin\JSWithNative-master\zxing\src\main\AndroidManifest.xml
+		INJECTED from E:\WorkspaceKotlin\JSWithNative-master\zxing\src\main\AndroidManifest.xml
