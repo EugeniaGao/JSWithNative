@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_webview)
         webview = findViewById(R.id.webview)
-        toolbar.title = "东本"
+        toolbar.title = "test"
         //toolbar说明文字居中的正确方式
         val textView = toolbar.getChildAt(0) as TextView
         textView.layoutParams.width = LinearLayout.LayoutParams.MATCH_PARENT
@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
     }
 
     @JavascriptInterface
-    fun scanQrcode(text: String) {
+    fun scanQrcode(text: String) {  //接受
         //1.传参接收前端JS的传值，扫描成功之后将值再传给前端
         initPermission()
         primary_key = text
@@ -229,7 +229,8 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
                     val result = data!!.getStringExtra("scanResult")
 //                      val param = "'$result'"
 //                        webview?.loadUrl("javascript:javaCallJswithParam('$result')")
-                    webview?.evaluateJavascript("javascript:scanCallwithParam('$result','$primary_key')") {
+                    webview?.evaluateJavascript("javascript:" +
+                            "('$result','$primary_key')") {
 
                     }
                 }
