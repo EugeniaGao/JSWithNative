@@ -36,8 +36,10 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
         setContentView(R.layout.activity_webview)
         webview = findViewById(R.id.webview)
         toolbar.title = "test"
+
         //toolbar说明文字居中的正确方式
         val textView = toolbar.getChildAt(0) as TextView
+
         textView.layoutParams.width = LinearLayout.LayoutParams.MATCH_PARENT
         textView.gravity = Gravity.CENTER_HORIZONTAL or Gravity.CENTER_HORIZONTAL
         textView.setOnTouchListener(OnDoubleClickListener(OnDoubleClickListener
@@ -73,7 +75,7 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
                 loadsImagesAutomatically = true // 加载图片
                 mediaPlaybackRequiresUserGesture = false//播放音频，多媒体需要用户手动？设置为false为可自动播放
             }
-//            webViewClient = WebViewClient()
+            webViewClient = WebViewClient()
         }
 //        //调用js函数
 //        button.setOnClickListener {
@@ -229,8 +231,7 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
                     val result = data!!.getStringExtra("scanResult")
 //                      val param = "'$result'"
 //                        webview?.loadUrl("javascript:javaCallJswithParam('$result')")
-                    webview?.evaluateJavascript("javascript:" +
-                            "('$result','$primary_key')") {
+                    webview?.evaluateJavascript("javascript:javaCallJswithParam('$result','$primary_key')") {
 
                     }
                 }
